@@ -1,7 +1,12 @@
-import Image from "next/image";
+"use client"
+import {Alert, Card, CardHeader, Typography } from "@mui/material";
+
 
 export default function Home() {
+ 
   return (
-   <div>my website</div>
+   <main>
+    Homepage
+   </main>
   );
 }
