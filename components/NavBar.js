@@ -1,23 +1,27 @@
 "use client"
 import { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
+import Link from "next/link";
+
 export function NavBar () {
     const [dropDown,setDropDown] = useState(false);
     const toggleMenu = () =>{
         setDropDown(!dropDown);
     }
     return (
-        <main className="bg-gray-100 shadow shadow-gray-300 w-full sticky top-0">
+        <main className="bg-gray-100 shadow shadow-gray-300 w-full sticky top-0 z-10">
             <div className="h-[50px] flex justify-between items-center px-5">
                 <h1 className="text-2xl font-bold text-blue-500">Dexter</h1>
                 <ul className="hidden md:text-sm font-semibold md:flex gap-10 cursor-pointer">
-                    <li>Home</li>
+                   <Link href="/"> <li>Home</li></Link>
                     <li>Contact-us</li>
                     <li>About-us</li>
                 </ul>
-                <div className="hidden md:block">
-                     <button className="w-[70px] h-[30px] bg-blue-500 rounded-md text-white">Login</button>
-                </div>
+                <Link href="/auth/login">
+                        <div className="hidden md:block">
+                            <button className="w-[70px] h-[30px] bg-blue-500 rounded-md text-white">Login</button>
+                        </div>
+                </Link>
                 <div className="block md:hidden">
                     <CiMenuBurger onClick={toggleMenu} className="text-2xl text-blue-500 " />
                 </div>
