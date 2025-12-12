@@ -33,7 +33,7 @@ export default async function Login () {
                 <p className="text-center text-gray-700">or sign up with</p>
 
                 <div className="flex justify-center items-center gap-4">
-                    `<form action={async () => {
+                    <form action={async () => {
                         "use server"
                         await signIn()
 
